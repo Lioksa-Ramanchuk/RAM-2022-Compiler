@@ -1,0 +1,1 @@
+Debug\RAM_2022_Compiler.exe -in:..\Test\test.txt -log:..\Test\log.txt -out:Generated\test.asm

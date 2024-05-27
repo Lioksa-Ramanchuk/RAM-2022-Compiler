@@ -1,0 +1,57 @@
+link "..\\Debug\\StdLib.lib";
+link int func stdGetTimeCount();
+
+int func getDiff(int start)
+{
+	int diff = stdGetTimeCount() - start;
+	return diff;
+}
+
+proc printNow()
+{
+	link str func stdGetDate(str s);
+	link str func stdGetTime(str s);
+
+	str now = stdGetTime(now) + " ";
+	write now;
+	now = stdGetDate(now) + "\n";
+	write now;
+}
+
+main
+{
+	int i = 2;
+	int i2 = (1)+1;
+	write i2;
+	write "\n";
+	int start = stdGetTimeCount();
+	
+	str now;
+	int choice = 1;
+	while (choice ! 0)
+	{
+		write "\nВыберите:\n";
+		write " 1 - вывести текущее время и дату\n";
+		write " 2 - вывести число прошедших со старта секунд\n";
+		write " другое - завершить выполнение\n";
+
+		read choice;
+		if (choice ~ 1)
+		{
+			printNow();
+		}
+		elif (choice ~ 2)
+		{
+			int diff = getDiff(start);
+			write "Прошло ";
+			write diff;
+			write " секунд\n";
+		}
+		else {
+			choice = 0;
+		}
+	}
+}
+
+@  Эта программа должна
+скомпилироваться... @
